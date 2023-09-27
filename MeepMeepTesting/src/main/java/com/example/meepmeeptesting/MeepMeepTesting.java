@@ -7,6 +7,12 @@ import com.noahbres.meepmeep.roadrunner.DefaultBotBuilder;
 import com.noahbres.meepmeep.roadrunner.SampleMecanumDrive;
 import com.noahbres.meepmeep.roadrunner.entity.RoadRunnerBotEntity;
 
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
 public class MeepMeepTesting {
     public static void main(String[] args) {
         MeepMeep meepMeep = new MeepMeep(800);
@@ -17,22 +23,13 @@ public class MeepMeepTesting {
                 .followTrajectorySequence(drive ->
                         drive.trajectorySequenceBuilder(new Pose2d(-36.00, -67.79, Math.toRadians(90.00)))
                                 .splineTo(new Vector2d(-35.82, -43.38), Math.toRadians(89.59))
-                                .splineTo(new Vector2d(-34.42, -26.34), Math.toRadians(89.60))
-                                .splineTo(new Vector2d(-39.51, -12.82), Math.toRadians(170.29))
-                                .splineToLinearHeading(new Pose2d(-55.32, -13.00, Math.toRadians(180.00)), Math.toRadians(180.00))
-                                .splineToConstantHeading(new Vector2d(-6.67, -12.64), Math.toRadians(2.37))
-                                .setReversed(true)
-                                .splineTo(new Vector2d(27.75, -12.64), Math.toRadians(4.59))
-                                .splineTo(new Vector2d(58.48, -11.59), Math.toRadians(1.78))
                                 .build()
                 );
-
-
-
-        meepMeep.setBackground(MeepMeep.Background.FIELD_POWERPLAY_OFFICIAL)
+        meepMeep.setBackground(MeepMeep.Background.FIELD_CENTERSTAGE_JUICE_DARK)
                 .setDarkMode(true)
                 .setBackgroundAlpha(0.95f)
                 .addEntity(myBot)
                 .start();
+
     }
 }

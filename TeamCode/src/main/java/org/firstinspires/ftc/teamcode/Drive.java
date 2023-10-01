@@ -74,6 +74,7 @@ public class Drive extends LinearOpMode{
                 float backLeftPower = (leftStickX - leftStickY - rightStickX) / (rightBumper ? 3 : 1);
                 float frontRightPower = (leftStickX - leftStickY + rightStickX) / (rightBumper ? 3 : 1);
                 float backRightPower = (leftStickX + leftStickY - rightStickX) / (rightBumper ? 3 : 1);
+
                 // Cap the motor powers
                 frontLeftPower = Range.clip(frontLeftPower, -1, 1);
                 backLeftPower = Range.clip(backLeftPower, -1, 1);
@@ -82,7 +83,9 @@ public class Drive extends LinearOpMode{
 
                 if(gamepad2.left_bumper){
                     intake.setPower(1);
-                } else{ intake.setPower(0); }
+                } else {
+                    intake.setPower(0);
+                }
 
                 // Set the motor powers
                 leftFront.setPower(frontLeftPower);
